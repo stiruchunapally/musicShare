@@ -1,4 +1,7 @@
 class Song:
+    """
+    A class defining a Song object
+    """
     def __init__(self, name, artist, album, id, albumArt):
         self.name = name
         # TODO: Add multiple artist capability
