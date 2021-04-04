@@ -1,0 +1,121 @@
+@font-face {
+    font-family: 'Circular';
+    src: url('Fonts/CircularSpUIv3T-Book.3466e0ec.woff2')
+}
+@font-face {
+    font-family: 'Circular-Bold';
+    src: url('Fonts/CircularSpUIv3T-Bold.8d0a45cc.woff2')
+}
+
+@font-face {
+    font-family: 'Circular-Light';
+    src: url('Fonts/CircularSpUIv3T-Light.afd9ab26.woff2')
+}
+
+@font-face {
+    font-family: 'Spoticon';
+    src: url('Fonts/spoticon_regular_2.d319d911.woff2')
+}
+
+p, input {
+    font-family: 'Circular';
+}
+
+#title {
+    font-family: 'Circular-Bold';
+}
+#searchContainer {
+    margin: 20px;
+}
+
+#submitButton {
+    background-color: #1DB954;
+    color: white;
+    border: none;
+    margin-top: -1px;
+    width: 70px;
+    height: 35px;
+    z-index: 1;
+}
+
+#submitButton:hover {
+    cursor: pointer;
+}
+
+#currentSongTableTitle {
+    color: #1DB954;
+    text-align: center;
+    font-size: large;
+    font-family: 'Circular-Bold'
+}
+
+#title {
+    color: #1DB954;
+    text-align: center;
+}
+#searchIcon {
+    z-index: 2;
+}
+
+#songsContainer {
+    margin-top: 50px;
+}
+
+#songText {
+    font-size: 18px;
+    width: 500px;
+    background-color: white;
+}
+
+#addToQueueButton {
+    background-color: #1DB954;
+}
+
+#errorMessage {
+    font-family: 'Circular-Bold';
+    color: #ffffff;
+}
+
+td {
+    text-align: center;
+    color: #ffffff;
+}
+
+.styled-table thead th {
+    text-align: center;
+}
+
+.styled-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.styled-table thead tr {
+    background-color: #1DB954;
+    color: #ffffff;
+    font-family: 'Circular';
+    text-align: center;
+    font-size: large;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}
+
+.styled-table tbody tr {
+    border-bottom: 1px solid #1DB954;
+    font-size: medium;
+    font-family: 'Circular'
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #1DB954;
+}
+
+body {
+    background-color: #535353 !important;
+}

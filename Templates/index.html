@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Music Share</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='/Styles/headphones.ico') }}">
+    <link rel="stylesheet" href="{{url_for('static', filename='styles/index.css')}}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+<body>
+<center>
+    <!-- Title and Search bar-->
+    <h1 id="title">Search For a Song</h1>
+    <div id = "searchContainer">
+        <form method="post" action="/search" class="form-inline m-auto">
+            <div class="input-group d-inline">
+              <div class="form-outline">
+                  <input required type="text" name="songName" id="form1" class="form-control">
+                  <button type="submit" class="btn btn-primary" id="submitButton" value="Search">Search</button>
+            </div>
+        </form>
+    </div>
+    <!--If there are any available messages, display them to the user-->
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <h3 id="errorMessage">{{ message }}</h3>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    <!--If there is a song currently playing, display the song's information-->
+    {% if currentSong != "None" %}
+        <div id="currentSongContainer">
+            <table class="styled-table">
+                <caption id="currentSongTableTitle">Current Song</caption>
+                <thead>
+                    <th scope="col">Album Art</th>
+                    <th scope="col">Song Name</th>
+                    <th scope="col">Artist</th>
+                    <th scope="col">Album</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="{{currentSong[0]}}" width="200" height="200"></td>
+                        <td>{{currentSong[1]}}</td>
+                        <td>{{currentSong[2]}}</td>
+                        <td>{{currentSong[3]}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    {% endif %}
+
+    <!--If there are songs in the song_list, display a table with all of the songs information-->
+    {% if len != 0 %}
+        <div id="songsContainer">
+            <table class="styled-table">
+              <thead>
+                <tr>
+                  <th scope="col">Album Art</th>
+                  <th scope="col">Song Name</th>
+                  <th scope="col">Artist</th>
+                  <th scope="col">Album</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                {%for i in range(0, len)%}
+                    <tr>
+                        <td><img src="{{songsList[i][0]}}" width="200" height="200"></td>
+                        <td>{{songsList[i][1]}}</td>
+                        <td>{{songsList[i][2]}}</td>
+                        <td>{{songsList[i][3]}}</td>
+                        <td>
+                            <form method ="post" action="/addToQueue" enctype="multipart/form-data">
+                                <button id="addToQueueButton" class="btn btn-success" name="songId" value="{{songsList[i][4]}}">Add To Queue</button>
+                            </form>
+                        </td>
+                    </tr>
+                {%endfor%}
+              </tbody>
+            </table>
+        </div>
+    {%endif%}
+</center>
+</body>
+</html>
