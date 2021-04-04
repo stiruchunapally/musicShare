@@ -7,17 +7,18 @@ import pickle
 from _thread import *
 
 scope = "user-modify-playback-state"  # The scope of Spotify permissions that are required
-SPOTIFY_CLIENT_ID = "CLIENTID"  # The Client ID of the App (Add your own)
-SPOTIFY_SECRET_ID = "SECRETID" # The Secret ID of the App (Add your own)
-REDIRECT_URI = "http://10.192.54.210:5000/"  # The redirect URL in case of failed authentication
+SPOTIFY_CLIENT_ID = "a67046fb1ba643a18c92fa605ddf203c"  # The Client ID of the App
+SPOTIFY_SECRET_ID = "f24ed9129a7643c9ba40e52e59390320"  # The Secret ID of the App
+
+REDIRECT_URI = "HOST IP: PORT"  # The redirect URL in case of failed authentication
 
 # Spotify authentication
 sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=SPOTIFY_CLIENT_ID, client_secret=SPOTIFY_SECRET_ID,
                                                redirect_uri=REDIRECT_URI,  scope=scope))
 
 ServerSocket = socket.socket()
-host = '10.192.54.210'  # The Host IP
-port = 1233  # The port the web server is hosted on
+host = "HOST IP"  # The Host IP
+port = PORT  # The port the web server is hosted on
 ThreadCount = 0
 
 # Binds socket to the port

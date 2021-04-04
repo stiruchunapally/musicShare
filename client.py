@@ -4,8 +4,8 @@ import pickle
 
 
 clientSocket = socket.socket()  # Creates a socket object for the client
-host = '10.192.54.210'  # The host IP
-port = 1233  # The port the web server is hosted on
+host = "HOST IP"  # The host IP
+port = PORT  # The port the web server is hosted on
 
 # Tries to connect to the server
 print('Waiting for connection')
