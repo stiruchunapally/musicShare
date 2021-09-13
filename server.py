@@ -7,8 +7,8 @@ import pickle
 from _thread import *
 
 scope = "user-modify-playback-state"  # The scope of Spotify permissions that are required
-SPOTIFY_CLIENT_ID = "a67046fb1ba643a18c92fa605ddf203c"  # The Client ID of the App
-SPOTIFY_SECRET_ID = "f24ed9129a7643c9ba40e52e59390320"  # The Secret ID of the App
+SPOTIFY_CLIENT_ID = "Client ID"  # The Client ID of the App
+SPOTIFY_SECRET_ID = "Secret ID"  # The Secret ID of the App
 
 REDIRECT_URI = "HOST IP: PORT"  # The redirect URL in case of failed authentication
 
